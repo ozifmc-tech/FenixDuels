@@ -1,7 +1,5 @@
 # FenixDuels
 Professional duel plugin for Minecraft servers.
-# FenixDuels
-Professional duel plugin for Minecraft servers.
 
 ## Xususiyatlari
 - Moslashuvchan konfiguratsiya
