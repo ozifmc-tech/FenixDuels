@@ -1,0 +1,102 @@
+# ====================================================================
+#                      FENIXDUELS CONFIGURATION
+# ====================================================================
+
+# ---- Taymerlar va Vaqt Sozlamalari ----
+timers:
+  invite-expire-seconds: 120    # Duel so'rovining amal qilish muddati (soniya)
+  winner-stay-seconds: 20       # 'own' rejimida g'olibning narsalarni terib olish vaqti (soniya)
+  round-break-seconds: 3        # Raundlar tugagandan keyingi pauza (soniya)
+
+messages:
+  # --- Prefix va Tizim ---
+  prefix: "&a&lFenixDuels &8» "
+  no-permission: "&c&lFenixDuels &8» &cBu buyruqdan foydalanish uchun sizda yetarli huquq yo'q!"
+  player-only: "&cBu buyruqni faqat o'yinchilar ishlata oladi!"
+  admin-list-arenas-header: "&a&lFenixDuels &8» &7Mavjud arenalar:"
+  admin-list-kits-header: "&a&lFenixDuels &8» &7Mavjud kitlar:"
+
+  # --- Duel Jarayoni ---
+  duel-start: "&a&lFenixDuels &8» &7Duel boshlandi! Kit: &b%kit% &7| Raund: &e%rounds%"
+  not-in-duel: "&c&lFenixDuels &8» &cSiz hozirda hech qanday duelda emassiz!"
+  opponent-not-found: "&c&lFenixDuels &8» &7Raqib topilmadi, duel sessiyasi tozalandi."
+  cannot-duel-self: "&c&lFenixDuels &8» &cO'zingizga duel so'rovi yubora olmaysiz!"
+  player-not-found: "&c&lFenixDuels &8» &7Kiritilgan o'yinchi topilmadi yoki serverda emas!"
+  invalid-rounds: "&c&lFenixDuels &8» &7Raundlar faqat TOQ sonli va maksimal 33 gacha bo'lishi kerak!"
+  round-cleaned: "&a&lFenixDuels &8» &7Raund tugadi! Arena yeridagi barcha drop-itemlar va tajriba ballari tozalandi."
+
+  # --- Arena va Kit Xatoliklari ---
+  kit-not-found: "&c&lFenixDuels &8» &7Bunday kit mavjud emas!"
+  arenas-busy: "&c&lFenixDuels &8» &7Ushbu kitga ulangan barcha arenalar hozirda band!"
+  duel-cancelled-busy: "&c&lFenixDuels &8» &7Hamma arenalar bandligi sababli duel bekor qilindi."
+  arena-not-configured: "&cArena spawn nuqtalari sozlanmagan! Admin bilan bog'laning."
+
+  # --- Kuzatish (Spectator) ---
+  spec-usage: "&7Foydalanish: /spec <o'yinchi_niki> yoki /spec leave"
+  not-spectating: "&7Siz hozirda hech kimni kuzatmayapsiz!"
+  spec-leave-success: "&7Kuzatish rejimidan chiqdingiz va eski joyingizga qaytdingiz."
+  cannot-spec-while-in-duel: "&7Siz o'zingiz duelda turib boshqalarni kuzata olmaysiz!"
+  spec-join-success: "&7Siz muvaffaqiyatli &e%player% &7ning dueliga ulandingiz. Kuzatishni tugatish uchun: &e/spec leave"
+
+  # --- Duel So'rovlari ---
+  no-invite: "&c&lFenixDuels &8» &cSizga hech qanday duel taklifi kelmagan!"
+  invite-sent: "&a&lFenixDuels &8» &e%player% &7ga duel so'rovi yuborildi!"
+  duel-denied-sender: "&c&lFenixDuels &8» &e%player% &7sizning duel so'rovingizni rad etdi!"
+  duel-denied-target: "&c&lFenixDuels &8» &7Duel taklifini rad etdingiz."
+  invite-expired-sender: "&c&lFenixDuels &8» &e%player% &7ga yuborgan duel so'rovingiz muddati (%time%s) tugadi va bekor qilindi."
+  invite-expired-target: "&c&lFenixDuels &8» &e%player% &7dan kelgan duel so'rovi muddati tugab, bekor bo'ldi."
+
+  # --- Taslim bo'lish (/duel leave) ---
+  leave-lose-own: "&c&lFenixDuels &8» &cDueldan qochganingiz sababli barcha narsalaringiz raqibga qoldi!"
+  leave-win-own: "&a&lFenixDuels &8» &e%player% &7taslim bo'ldi! Uning narsalari sizga qoldi."
+  leave-lose-kit: "&c&lFenixDuels &8» &7Siz mag'lubiyatingizni tan oldingiz!"
+  leave-win-kit: "&a&lFenixDuels &8» &e%player% &7taslim bo'ldi. G'alaba sizniki!"
+  winner-stay-time-out: "&a&lFenixDuels &8» &7%time% soniya tugadi. Siz dueldan oldingi joyingizga qaytarildingiz!"
+
+  # --- Yordam (Help) Menulari ---
+  help-menu:
+    - "&8&m---------&r &e&lFenixDuels Yordam Menusi &8&m---------"
+    - "&e/duel <o'yinchi> <kit/own> <raund> &7- Duelga chaqirish"
+    - "&e/duel accept / deny &7- Taklifni boshqarish"
+    - "&e/duel leave &7- Taslim bo'lish (Mag'lubiyat)"
+    - "&e/duel see <kit> &7- Kitni ko'rish (Admin)"
+    - "&8&m----------------------------------------"
+
+  admin-help-menu:
+    - "&8&m---------&r &c&lFenixDuels Admin Menusi &8&m---------"
+    - "&e/duel wand &7- Region belgilash boltasini olish"
+    - "&e/duel createarena <nomi> <kit/own> &7- Yangi arena yaratish"
+    - "&e/duel setregion <arena> &7- Regionni saqlash"
+    - "&e/duel setspawn <arena> <spawn1/spawn2> &7- Spawn o'rnatish"
+    - "&e/duel createkit <nomi> &7- Kit yaratish"
+    - "&e/duel deletearena <arena> &7- Arenani o'chirish"
+    - "&e/duel deletekit <kit> &7- Kitni o'chirish"
+    - "&8&m----------------------------------------"
+
+  # --- Admin Xabarlari ---
+  admin-wand-given: "&aRegion belgilash boltasi berildi."
+  admin-arena-created: "&a&lFenixDuels &8» &b%arena% &7arenasi yaratildi va &e%kit% &7kitiga ulandi!"
+  admin-points-missing: "&cAvval nuqtalarni belgilang (Wand boltasi bilan)!"
+  admin-region-saved: "&aRegion muvaffaqiyatli saqlandi."
+  admin-spawn-saved: "&aSpawn %spawn% muvaffaqiyatli o'rnatildi."
+  admin-kit-saved: "&aKit muvaffaqiyatli saqlandi."
+  admin-arena-deleted: "&cArena o'chirildi."
+  admin-kit-deleted: "&cKit o'chirildi."
+
+# ---- Duel So'rovi Kelganda Chatda Chiqadigan Format ----
+invite-format:
+  - "&8§m----------------------------------------"
+  - "&f⚔️ &d&lDUEL CHORLOV &7- &e%player%"
+  - "&7Kit: &b%kit% &7| Raund: &e%rounds%"
+  - "&aQabul qilish: &2/duel accept &7| &cRad etish: &4/duel deny"
+  - "&8§m----------------------------------------"
+
+# ---- Region Boltasi Sozlamalari ----
+wand-settings:
+  material: "WOODEN_AXE"
+  display-name: "&d&lDuel Region Wand"
+  lore:
+    - "&7------------------------"
+    - "&eChap Klik: &b1-Nuqtani belgilash"
+    - "&eO'ng Klik: &b2-Nuqtani belgilash"
+    - "&7------------------------"

@@ -1,0 +1,21 @@
+name: FenixDuels
+version: 1.0
+main: com.fenixDuels.FenixDuels
+api-version: 1.19
+
+commands:
+  duel:
+    description: FenixDuels asosiy buyrug'i
+    usage: /duel <nick> <kit> <raund>
+    permission: fenixduels.use
+  spec:
+    description: Duel maydonidagi o'yinchilarni kuzatish yoki chiqish buyrug'i
+    usage: /spec <nick/leave>
+
+permissions:
+  fenixduels.use:
+    description: Oddiy o'yinchilar uchun duel buyruqlaridan foydalanish huquqi
+    default: true
+  fenixduels.admin:
+    description: Adminlar uchun duel sozlamalari huquqi
+    default: op
